@@ -1,0 +1,8 @@
+byte yourUID[4] = {0xAA, 0xBB, 0xCC, 0xDD};
+byte verifyUID = yourUID[0] ^ yourUID[1] ^ yourUID[2] ^ yourUID[3];
+byte blockData[16] = {//要寫入的資料
+  yourUID[0] , yourUID[1], yourUID[2], yourUID[3],
+  verifyUID, 0x8, 0x4, 0x0,
+  0x62, 0x63, 0x64, 0x65,
+  0x66, 0x67, 0x68, 0x69
+};
